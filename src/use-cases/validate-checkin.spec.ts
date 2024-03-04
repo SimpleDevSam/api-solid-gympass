@@ -61,7 +61,7 @@ describe('Validate Check-in Use Case', () => {
     })
     await expect(() =>
       sut.execute({
-        checkinId: createdCheckIn.id,
+        checkinId: checkIn?.id,
       }),
     ).rejects.toBeInstanceOf(LateCheckInValidationError)
   })
