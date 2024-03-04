@@ -3,7 +3,7 @@ import { expect, describe, it, beforeEach, afterEach } from 'vitest'
 import { ValidateCheckinUseCase } from './validate-checkin'
 import { ResourcesNotExistError } from './errors/resource-not-exists'
 import { vi } from 'vitest'
-import { nullable } from 'zod'
+import { LateCheckInValidationError } from './errors/late-check-in-validation-error'
 
 
 let checkInsRepository: InMemoryCheckInsRepository
@@ -62,7 +62,7 @@ describe('Validate Check-in Use Case', () => {
     await expect(() =>
       sut.execute({
         checkinId: createdCheckIn.id,
-      })
-    ).rejects.toBeInstanceOf(Error)
+      }),
+    ).rejects.toBeInstanceOf(LateCheckInValidationError)
   })
 })

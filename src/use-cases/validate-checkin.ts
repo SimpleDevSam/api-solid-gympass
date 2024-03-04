@@ -32,7 +32,7 @@ export class ValidateCheckinUseCase {
             'minutes',
         )
             
-        if (distanceInMinutesfromCheckinCreation >20 ) {
+        if (distanceInMinutesfromCheckinCreation > 20 ) {
             throw new LateCheckInValidationError()
         }
 
