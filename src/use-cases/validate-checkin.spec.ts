@@ -56,13 +56,10 @@ describe('Validate Check-in Use Case', () => {
 
     vi.advanceTimersByTime(tentyOneMinutesinMs)
 
-    const { checkIn } = await sut.execute({
-      checkinId: createdCheckIn.id,
-    })
-    await expect(() =>
-      sut.execute({
-        checkinId: checkIn?.id,
-      }),
+    await expect(async () =>
+      await sut.execute({
+        checkinId: createdCheckIn.id
+      })
     ).rejects.toBeInstanceOf(LateCheckInValidationError)
   })
 })
