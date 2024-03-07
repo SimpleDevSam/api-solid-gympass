@@ -2,7 +2,7 @@
   "name": "vitest-enviroment-prisma",
   "version": "1.0.0",
   "description": "",
-  "main": "prisma-test-enviroment.ts",
+  "main": "prisma-test-environment.ts",
   "keywords": [],
   "author": "",
   "license": "ISC"

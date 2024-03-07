@@ -7,7 +7,8 @@ export default defineConfig({
   plugins: [tsConfigPaths()],
   test: {
     environmentMatchGlobs:[
-      ['src/controller/**','prisma']
-    ]
+      ['src/http/controller/**','prisma']
+    ],
+    dir:'src'
   }
 })
